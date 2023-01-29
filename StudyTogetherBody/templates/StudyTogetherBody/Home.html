@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        {% extends 'Main.html' %}
+        {%block content%}
+        <h1 >Rooms</h1>
+        <div>
+            {%for room in rooms%}
+            <div>
+                <span>@{{room.host.username}}</span>
+            <h5>
+                {{room.id}} -- <a href="/room/{{room.id}}">{{room.name}}</a> 
+            </h5>
+            <small>{{room.topic.description}}</small>
+            <br>
+            <button><a href="/updateroom/{{room.id}}">Edit Room</a></button>
+            <button><a href="/deleteroom/{{room.id}}">delete Room</a></button>
+            <hr>
+            {%endfor%}
+        </div>
+        </div>
+        <button><a href="/createroom">Create Room</a></button>
+        {%endblock  %}
+        
+        
+    </body>
+</html>

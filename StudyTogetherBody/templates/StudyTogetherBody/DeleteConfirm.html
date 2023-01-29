@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    {% extends 'Main.html' %}
+    {%block content%}
+    <form method="post" action="">
+        {%csrf_token%}
+        <h5>Are you sure you want to delete "{{forms}}"?</h5>
+        <button type="submit">Confirm</button>
+        <button><a href="{{request.META.HTTP_REFERER}}">Go back</a></button>
+    </form>
+    {%endblock%}
+    </body>
+</html>
